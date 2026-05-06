@@ -4,4 +4,5 @@ import com.ohpen.mo_ha.domain.ConfigChange;
 
 public interface NotificationService {
     void notifyCriticalChange(ConfigChange change);
+    boolean isAvailable();
 }
