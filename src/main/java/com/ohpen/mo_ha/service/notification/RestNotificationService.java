@@ -38,7 +38,7 @@ public class RestNotificationService implements NotificationService {
     }
 
     @Override
-    // No Async as we need to display something to the user.
+    // No Async as we need to display something now.
     public boolean isAvailable() {
         try {
             restClient.get().uri(healthUrl).retrieve().toBodilessEntity();
