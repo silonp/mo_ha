@@ -12,6 +12,9 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.RestClient;
 
+// This does start Tomcat, by design: the test needs a real HTTP listener so the slow /stub/slow endpoint can be reached
+// and the RestClient's read-timeout is exercised on actual network I/O.
+// A MOCK env wouldn't trigger the timeout — there's nothing to time out against.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 class RestNotificationServiceTimeoutTest {
