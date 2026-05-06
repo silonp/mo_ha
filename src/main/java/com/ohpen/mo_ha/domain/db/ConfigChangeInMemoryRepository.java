@@ -36,6 +36,11 @@ public class ConfigChangeInMemoryRepository implements ConfigChangeRepository {
                 .toList();
     }
 
+    @Override
+    public void purge() {
+        store.clear();
+    }
+
     private boolean isWithinTimeRange(ConfigChange change, @Nonnull ConfigChangeFilter filter) {
         if (filter.from() != null && change.timestamp().isBefore(filter.from())) {
             return false;

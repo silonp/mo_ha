@@ -11,4 +11,6 @@ public interface ConfigChangeRepository {
     Optional<ConfigChange> findById(UUID id);
 
     List<ConfigChange> findAll(ConfigChangeFilter filter);
+
+    void purge();
 }
