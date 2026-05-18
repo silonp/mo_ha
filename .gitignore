@@ -1,0 +1,8 @@
+# Ignore all hidden files but these.
+.*
+!.gitignore
+!.gitattributes
+!.mvn/
+
+# Binaries.
+target/
